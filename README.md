@@ -6,7 +6,15 @@ Originally designed for use on SEEWO devices.
 
 ## TODOS
 
-- [ ] Basic logic (queue popping and calculation)  
-- [ ] Implent widget UI  
+-  [ ] Basic logic
+- - [x] Simple widget UI  
+- - - [ ] Better appearance
+- - [x] Animation
+- - - [x] Enter
+- - - [x] Disappear  
+- - - [ ] ...  
+- - [ ] Text updating
+- - [ ] Queue and calculation  
 - [ ] JSON config loading  
+- [ ] i18n compatible
 - [ ] Graphical Config Editor  
