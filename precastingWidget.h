@@ -5,6 +5,7 @@
 #include <QGuiApplication>
 #include <QScreen>
 #include <QTimer>
+#include <QJsonDocument>
 #include "utils.h"
 #include "ui_precastingWidget.h"
 
@@ -15,7 +16,7 @@ class precastingWidget : public QWidget
     struct CTActv
     {
         enum type { CLASS, REST, IDLE };
-        double actStart, actEnd;
+        QTime actStart, actEnd;
     };
     enum animStat
     {
@@ -34,10 +35,10 @@ private:
         p_slantDelta = 25;
     const int
         p_height = 60,
-        p_LRMargin = 20;
+        p_LRMargin = 5;
     int tmp_frmcnt = 0,
-        ent_frames = 110,
-        dspr_frames = 90,
+        ent_frames = 90,
+        dspr_frames = 74,
         min_length = 90;
     int ent_lenpf = 0,
         dspr_lenpf = 0;
@@ -60,9 +61,10 @@ private slots:
     void trigCheck();
 
 private:
+    QPainter* pnt;// (this);
     QTimer *calc_tm;
-    void calcAnimation();
+    bool calcAnimation();
     // void checkAcvitity();
-    void checkActivity();
+    bool checkActivity();
 	Ui::precastingWidgetClass ui;
 };
